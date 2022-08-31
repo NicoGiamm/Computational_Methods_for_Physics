@@ -1,0 +1,10 @@
+all: FPU_vv
+
+FPU_vv: main.cpp velocityverlet.o Energia.o
+	g++ -std=c++11 main.cpp velocityverlet.o Energia.o -o FPU_vv
+
+velocityverlet.o: velocityverlet.cpp
+	g++ -std=c++11 -c velocityverlet.cpp
+
+Energia.o: Energia.cpp
+	g++ -std=c++11 -c Energia.cpp
